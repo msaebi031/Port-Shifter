@@ -55,12 +55,15 @@ iptables_menu() {
     case $choice in
         1)
             install_iptables
+            iptables_menu
             ;;
         2)
             check_port_iptables
+            iptables_menu
             ;;
         3)
             uninstall_iptables
+            iptables_menu
             ;;
         4)
             menu
@@ -87,18 +90,23 @@ gost_menu() {
     case $choice in
         1)
             install_gost
+            gost_menu
             ;;
         2)
             check_port_gost
+            gost_menu
             ;;
         3)
             add_port_gost
+            gost_menu
             ;;
         4)
             remove_port_gost
+            gost_menu
             ;;
         5)
             uninstall_gost
+            gost_menu
             ;;
         6)
             menu
@@ -126,21 +134,27 @@ dokodemo_menu() {
     case $choice in
         1)
             install_xray
+            dokodemo_menu
             ;;
         2)
             check_service_xray
+            dokodemo_menu
             ;;
         3)
             trafficstat
+            dokodemo_menu
             ;;
         4)
             add_another_inbound
+            dokodemo_menu
             ;;
         5)
             remove_inbound
+            dokodemo_menu
             ;;
         6)
             uninstall_xray
+            dokodemo_menu
             ;;
         7)
             menu
@@ -167,18 +181,23 @@ haproxy_menu() {
     case $choice in
         1)
             install_haproxy
+            haproxy_menu
             ;;
         2)
             check_haproxy
+            haproxy_menu
             ;;
         3)
             add_frontend_backend
+            haproxy_menu
             ;;
         4)
             remove_frontend_backend
+            haproxy_menu
             ;;
         5)
             uninstall_haproxy
+            haproxy_menu
             ;;
         6)
             menu
@@ -203,12 +222,15 @@ other_options_menu() {
     case $other_choice in
         1)
             configure_dns
+            other_options_menu
             ;;
         2)
             update_server
+            other_options_menu
             ;;
         3)
             ping_websites
+            other_options_menu
             ;;
         4)
             menu
