@@ -1,4 +1,7 @@
 #!/bin/bash
+for script in /opt/Port-Shifter/scripts/*.sh; do
+  source "$script"
+done
 
 # تابع منوی اصلی
 menu() {
