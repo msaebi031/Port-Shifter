@@ -14,7 +14,7 @@ Port Shifter is a script designed to manage iptables, GOST, Xray, and HAProxy in
 
 ## Install
 ```shell
-bash <(curl https://raw.githubusercontent.com/ReturnFI/Port-Shifter/main/install.sh)
+bash <(curl https://raw.githubusercontent.com/msaebi031/Port-Shifter/main/install.sh)
 ```
 ## Supported Operating Systems
 
