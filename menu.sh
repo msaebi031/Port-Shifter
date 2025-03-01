@@ -5,6 +5,7 @@ done
 
 # تابع منوی اصلی
 menu() {
+    echo -e "\n\n\n" # برای ایجاد فضای خالی قبل از نمایش منو
     echo "Welcome to Port-Shifter"
     echo "Please choose your tunnel mode:"
     echo "1. IP-Tables - Manage IP-Tables Tunnel"
@@ -44,6 +45,7 @@ menu() {
 
 # تابع مدیریت IP-Tables
 iptables_menu() {
+    echo -e "\n\n\n" # برای ایجاد فضای خالی قبل از نمایش منو
     echo "IP-Tables Menu"
     echo "1. Install - Install IP-Tables Rules"
     echo "2. Status - Check Ports In Use"
@@ -77,6 +79,7 @@ iptables_menu() {
 
 # تابع مدیریت GOST
 gost_menu() {
+    echo -e "\n\n\n" # برای ایجاد فضای خالی قبل از نمایش منو
     echo "GOST Menu"
     echo "1. Install - Install GOST"
     echo "2. Status - Check GOST Port And Status"
@@ -120,6 +123,7 @@ gost_menu() {
 
 # تابع مدیریت Dokodemo-Door
 dokodemo_menu() {
+    echo -e "\n\n\n" # برای ایجاد فضای خالی قبل از نمایش منو
     echo "Dokodemo-Door Menu"
     echo "1. Install - Install Xray For Dokodemo-Door And Add Inbound"
     echo "2. Status - Check Xray Service Status"
@@ -168,6 +172,7 @@ dokodemo_menu() {
 
 # تابع مدیریت HA-Proxy
 haproxy_menu() {
+    echo -e "\n\n\n" # برای ایجاد فضای خالی قبل از نمایش منو
     echo "HA-Proxy Menu"
     echo "1. Install - Install HA-Proxy"
     echo "2. Status - Check HA-Proxy Port and Status"
@@ -211,6 +216,7 @@ haproxy_menu() {
 
 # تابع مدیریت گزینه‌های دیگر
 other_options_menu() {
+    echo -e "\n\n\n" # برای ایجاد فضای خالی قبل از نمایش منو
     echo "Other Options"
     echo "1. DNS - Configure DNS"
     echo "2. Update - Update Server"
