@@ -5,7 +5,6 @@ done
 
 # تابع منوی اصلی
 menu() {
-    clear
     echo "Welcome to Port-Shifter"
     echo "Please choose your tunnel mode:"
     echo "1. IP-Tables - Manage IP-Tables Tunnel"
@@ -45,7 +44,6 @@ menu() {
 
 # تابع مدیریت IP-Tables
 iptables_menu() {
-    clear
     echo "IP-Tables Menu"
     echo "1. Install - Install IP-Tables Rules"
     echo "2. Status - Check Ports In Use"
@@ -76,7 +74,6 @@ iptables_menu() {
 
 # تابع مدیریت GOST
 gost_menu() {
-    clear
     echo "GOST Menu"
     echo "1. Install - Install GOST"
     echo "2. Status - Check GOST Port And Status"
@@ -115,7 +112,6 @@ gost_menu() {
 
 # تابع مدیریت Dokodemo-Door
 dokodemo_menu() {
-    clear
     echo "Dokodemo-Door Menu"
     echo "1. Install - Install Xray For Dokodemo-Door And Add Inbound"
     echo "2. Status - Check Xray Service Status"
@@ -158,7 +154,6 @@ dokodemo_menu() {
 
 # تابع مدیریت HA-Proxy
 haproxy_menu() {
-    clear
     echo "HA-Proxy Menu"
     echo "1. Install - Install HA-Proxy"
     echo "2. Status - Check HA-Proxy Port and Status"
@@ -197,7 +192,6 @@ haproxy_menu() {
 
 # تابع مدیریت گزینه‌های دیگر
 other_options_menu() {
-    clear
     echo "Other Options"
     echo "1. DNS - Configure DNS"
     echo "2. Update - Update Server"
