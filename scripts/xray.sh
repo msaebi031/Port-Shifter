@@ -4,15 +4,7 @@ source /opt/Port-Shifter/scripts/path.sh
 source /opt/Port-Shifter/scripts/package.sh
 
 install_xray() {
-    if systemctl is-active --quiet xray; then
-        echo "Xray service is already active. Do you want to reinstall? (y/n)"
-        read answer
-        if [[ "$answer" != "y" ]]; then
-            echo "Installation cancelled. Xray service remains active."
-            return
-        fi
-    fi
-
+    echo "Installing Xray..."
     bash -c "$(curl -sL https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install 2>&1
 
     echo "Xray installation completed!"
