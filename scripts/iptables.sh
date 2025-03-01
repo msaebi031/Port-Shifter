@@ -4,8 +4,11 @@ source /opt/Port-Shifter/scripts/path.sh
 source /opt/Port-Shifter/scripts/package.sh
 
 install_iptables() {
-    IP=$(whiptail --inputbox "Enter your main server IP like (1.1.1.1):" 8 60 3>&1 1>&2 2>&3)
-    TCP_PORTS=$(whiptail --inputbox "Enter ports separated by commas (e.g., 80,443):" 8 60 80,443 3>&1 1>&2 2>&3)
+    # ورودی IP و پورت‌ها از کاربر گرفته می‌شود
+    echo "Enter your main server IP like (1.1.1.1):"
+    read IP
+    echo "Enter ports separated by commas (e.g., 80,443):"
+    read TCP_PORTS
 
     {
         echo "10" "Installing iptables..."
@@ -25,9 +28,9 @@ install_iptables() {
         sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null
         echo "100" "Starting iptables service..."
         sudo systemctl start iptables
-    } | dialog --title "IPTables Installation" --gauge "Installing IPTables..." 10 100 0
+    }
     clear
-    whiptail --title "IPTables Installation" --msgbox "IPTables installation completed." 8 60
+    echo "IPTables installation completed."
 }
 
 check_port_iptables() {
@@ -36,11 +39,13 @@ check_port_iptables() {
     status=$(sudo systemctl is-active iptables)
     service_status="iptables Service Status: $status"
     info="Service Status and Ports in Use:\n$ip_ports\n\n$service_status"
-    whiptail --title "iptables Service Status and Ports" --msgbox "$info" 15 70
+    echo -e "$info"
 }
 
 uninstall_iptables() {
-    if whiptail --title "Confirm Uninstallation" --yesno "Are you sure you want to uninstall IPTables?" 8 60; then
+    echo "Are you sure you want to uninstall IPTables? (y/n)"
+    read confirm
+    if [[ $confirm == "y" || $confirm == "Y" ]]; then
         {
             echo "10" ; echo "Flushing iptables rules..."
             sudo iptables -F > /dev/null 2>&1
@@ -61,11 +66,11 @@ uninstall_iptables() {
             sudo systemctl stop iptables > /dev/null 2>&1
             sleep 1
             echo "100" ; echo "IPTables Uninstallation completed!"
-        } | whiptail --gauge "Uninstalling IPTables..." 10 70 0
+        }
         clear
-        whiptail --title "IPTables Uninstallation" --msgbox "IPTables Uninstalled." 8 60
+        echo "IPTables Uninstalled."
     else
-        whiptail --title "IPTables Uninstallation" --msgbox "Uninstallation cancelled." 8 60
         clear
+        echo "Uninstallation cancelled."
     fi
 }
