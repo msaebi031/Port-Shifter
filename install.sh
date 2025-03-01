@@ -84,11 +84,7 @@ else
     echo "Alias already exists in .bashrc"
 fi
 
-echo "Applying the new alias..."
-exec bash
-
 sleep 3
-clear
 echo "Installation complete. You can now run the script using 'portshift'."
 
 git clone https://github.com/msaebi031/Port-Shifter /opt/Port-Shifter > /dev/null 2>&1
