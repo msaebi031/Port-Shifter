@@ -76,14 +76,16 @@ for package in "${necessary_packages[@]}"; do
     install_package "$package"
 done
 
+# بررسی و اضافه کردن alias به ~/.bashrc
 if ! grep -q "alias portshift='bash -c \"/opt/Port-Shifter/menu.sh\"'" ~/.bashrc; then
     echo "alias portshift='bash -c \"/opt/Port-Shifter/menu.sh\"'" >> ~/.bashrc
     echo "Alias added to .bashrc"
-    source ~/.bashrc
 else
     echo "Alias already exists in .bashrc"
-    source ~/.bashrc
 fi
+
+echo "Applying the new alias..."
+exec bash
 
 sleep 3
 clear
