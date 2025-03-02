@@ -4,14 +4,6 @@ source /opt/Port-Shifter/scripts/path.sh
 source /opt/Port-Shifter/scripts/package.sh
 
 install_haproxy() {
-    if systemctl is-active --quiet haproxy; then
-        read -p "HAProxy service is already active. Do you want to reinstall? (y/n): " choice
-        if [[ "$choice" != "y" ]]; then
-            echo "Installation cancelled. HAProxy service remains active."
-            return
-        fi
-    fi
-
     echo "Installing HAProxy..."
     sudo $PACKAGE_MANAGER install haproxy -y > /dev/null 2>&1
     sleep 1
